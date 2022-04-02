@@ -239,6 +239,7 @@ nav .fa{
     cursor: pointer;
     width: 20%;
     margin: auto;
+    text-align: center;
 }
 .submit-btn:hover{
     border: 1px solid #f44336;

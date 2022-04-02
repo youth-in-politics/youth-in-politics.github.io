@@ -104,16 +104,21 @@
         <h1>Subscribe to our newsletter!</h1>
         <p>Enter your email adress below.</p>
         <form action="" class="email">
-            <input type="email" class="inputEmail">
-            <input type="submit" class="submit-btn">
+            <input type="input" class="inputEmail", id="inputEmail">
+            <input value="Submit", class="submit-btn", id="submit-btn", onclick="testPassword()", readonly="True">
         </form>
     </div>
 </section>
 
-<!-- Footer
-<section class="footer">
-    <p>Made with HTML.</p>
-</section> -->
+<script>
+    function testPassword() {
+        let val = document.getElementById("inputEmail").value;
+        if (val === 'toz@gmail.com') {
+            window.location.href = "confirmation.html";
+            document.getElementById("inputEmail").value = ""
+            }
+        }
+</script>
 
 </body>
 

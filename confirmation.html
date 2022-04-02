@@ -11,6 +11,71 @@
 </head>
 <body>
 
+
+<div class="container">
+    <span class="fall", id="fall"></span>
+    <span class="fall", id="fall", style="top: 200px"></span>
+    <span class="fall", id="fall", style="top: 300px"></span>
+    <span class="fall", id="fall", style="top: 400px"></span>
+    <span class="fall", id="fall", style="top: 500px"></span>
+    <span class="fall", id="fall", style="top: 600px"></span>        
+</div>
+
+
+
+</span>
+
+<script>
+    const els = document.getElementsByClassName("fall");
+    const randLet = ['У', 'Q', 'ъ', 'Ι', 'Д', 'д', 'x', 'm', '@', 'Y', 'O', 'α', 'Γ', 'ђ', 'Ύ', 'q', '£', 'Ґ', 'Τ', 'ν', 'u', 'Й', '2', 'c', 'С', 'њ', 'Х', 'о', 'Ή', 'S', 'H', 'П', 'ă', 'Έ', 'Ζ', 'Ж', '6', 'И', 'ϋ', 'X', 'т', 'Η', '÷', 'с', 'ґ', 'у', 't', ',', 'і', 'W', 'k', 'џ', 'j', 'ê', 'Л', 'ž', 'p', 'v', 'Ν', 'Σ', 'щ', 'Ć', 'Є', 'Е', 'и', 'γ', 'ζ', 'τ', 'а', 'Ά', 'V', 'e', 'μ', 'ί', '”', 'Ơ', 'ш', 'Κ', 'Α', 'g', 'â', 'M', 'z', 'o', 'Я', 'ї', '0', 'Ё', 'n', 'Ω', 'Ђ', 'Č', 'ј', 'υ', 'η', 'В', 'ί', 'P', 's', 'ξ', 'Ъ', 'н', 'ω', 'ж', '1', 'Θ', 'l', 'Ц', 'Đ', 'θ', 'ο', 'м', 'Ă', 'Β', 'λ', 'Щ', 'Ї', 'ơ', 'E', '®', 'T', 'Ћ', '©', 'Ž', 'ч', '7', 'ά', 'ё', '5', ':', 'ć', 'Ѕ', '3', 'Ы', 'a', 'Ф', 'е', 'ѕ', 'в', 'л', 'ό', '4', ']', 'ц', 'Π', 'М', 'h', 'Ю', 'Ψ', 'Ј', 'N', 'р', 'Б', 'й', 'З', 'І', '¥', '“', 'ύ', 'J', 'š', 'Ξ', 'ύ', 'έ', 'Ϋ', 'F', 'Ư', 'φ', '[', 'Λ', 'ι', 'έ', 'Â', 'Ε', 'Z', 'Ο', 'х', 'έ', '<', 'Љ', 'ϊ', 'U', 'К', 'Χ', 'ρ', '&', '.', 'ў', 'А', 'Ў', 'D', 'ΰ', 'Т', 'χ', 'δ', '¢'];
+    
+    Array.from(els).forEach(
+        function(fall, index, array) {
+            const wait = (func, timeout) => {
+                return new Promise(resolve => setTimeout(() => {
+                    resolve(func());
+                }, timeout));
+            }
+
+            (async () => {
+                let index = 0;
+                while (true) {
+                    await wait(() => {
+                        fall.classList.add("show");
+                        
+                        var str = "";
+                        for (let i = 0; i < 23; i++) {
+                            const random = Math.floor(Math.random() * randLet.length);
+                            const randomLet = randLet[random];
+                            var str = str + randomLet + " "
+                        }
+                        fall.textContent = str;
+                        index = ++index % randLet.length;
+                    }, 300);
+                    await wait(() => {
+                        fall.classList.add("hide");
+                    }, 300);
+                    await wait(() => {
+                        fall.classList.remove("show");
+                        fall.classList.remove("hide");
+                    }, 100);
+                }
+            })();
+        }
+    );
+
+    document.onkeyup = function(e) {
+        if (e.shiftKey && e.which == 84) {
+            var fall = document.getElementsByClassName('fall');
+            Array.from(els).forEach(
+                function(el, index, array) {
+                    el.parentNode.removeChild(el)
+            });
+        };
+    };
+
+</script>
+
 </body>
 
 </html>
