@@ -14,11 +14,11 @@
 
 <div class="container">
     <span class="fall", id="fall"></span>
-    <span class="fall", id="fall", style="top: 200px"></span>
-    <span class="fall", id="fall", style="top: 300px"></span>
-    <span class="fall", id="fall", style="top: 400px"></span>
-    <span class="fall", id="fall", style="top: 500px"></span>
-    <span class="fall", id="fall", style="top: 600px"></span>        
+    <span class="fall", id="fall", style="top: calc(2 * calc(100vw / 14.4))"></span>
+    <span class="fall", id="fall", style="top: calc(3 * calc(100vw / 14.4))"></span>
+    <span class="fall", id="fall", style="top: calc(4 * calc(100vw / 14.4))"></span>
+    <span class="fall", id="fall", style="top: calc(5 * calc(100vw / 14.4))"></span>
+    <span class="fall", id="fall", style="top: calc(6 * calc(100vw / 14.4))"></span>        
 </div>
 
 
@@ -69,10 +69,10 @@
             var fall = document.getElementsByClassName('fall');
             Array.from(els).forEach(
                 function(el, index, array) {
-                    el.parentNode.removeChild(el)
+                    window.location.href = "confirmation2.html";
             });
         } else if (e.which == 72) {
-            window.location.href = "index.html";;
+            window.location.href = "index.html";
         };
     };
 

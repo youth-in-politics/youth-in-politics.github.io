@@ -20,13 +20,13 @@ h1{
     width: 85%;
     height: 90%;
     margin: auto;
-    top: 100px;
-    left: 100px;
+    top: calc(100vw / 14.4);
+    left: calc(100vw / 14.4);
     opacity: 0;
     transform: translateY(-100px);
     transition: all 0.1s;
-    color: gold;
-    font-size: 45;
+    color: #39FF14;
+    font-size: calc(100vw / 32);
     perspective: 500px;
     /* background-color: red; */
     /* padding-left: 4px; */
